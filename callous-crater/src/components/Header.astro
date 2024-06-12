@@ -1,6 +1,6 @@
 ---
-import NightModeButton from "./NightModeButton.astro"
-import HeaderSocialLinks from "./HeaderSocialLinks.astro"
+import NightModeButton from "./ui/NightModeButton.astro"
+import HeaderSocialLinks from "./ui/HeaderSocialLinks.astro"
 ---
 
 <header>
@@ -16,7 +16,7 @@ import HeaderSocialLinks from "./HeaderSocialLinks.astro"
 
         <div class="header-interactives">
             <div id="nightModeBtn">
-                <NightModeButton client:load/>
+                <NightModeButton/>
             </div>
             <div id="other-interactives">
                 <HeaderSocialLinks social="instagram" link="https://www.instagram.com/braids.villa/"/>

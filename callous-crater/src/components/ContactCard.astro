@@ -1,0 +1,62 @@
+---
+import ContactIcon from "./ui/ContactIcon.astro"
+---
+
+<section id="Contact">
+        <div class="content">
+            <h1> Have any questions?</h1>
+            <h2> Contact Ore</h2>
+            <p>Have questions about booking or want to discuss a unique idea? I'm here to help you achieve your dream style. Let's chat and make everything perfect before you book!</p>
+            <div class="icons">
+                <ContactIcon icon="email" string="email@email.com"/>
+                <ContactIcon icon="instagram" string="@braids.villa"/>
+                <ContactIcon icon="phone" string="+1 (555) 555-5555"/>
+            </div>
+        </div>
+        <img src="/ContactImageBig.png" alt="Contact Image">
+</section>
+
+<style> 
+    section {
+        position: relative;
+        display: flex;
+        width: 90%;
+        margin: auto;
+        height: 371px;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: var(--card-highlight-color);
+        border-radius: 10px;
+    }
+    h1 {
+        font-size: 38px;
+        font-weight: 900;
+    }
+    h2 {
+        font-size: 18px;
+        font-weight: 900;
+    }
+    p {
+        font-size: 15px;
+        font-weight: 300;
+        width: 85%;
+    }
+    .content {
+        width: 50%;
+        padding-bottom: 1rem;
+        padding-left: 3rem;
+    }
+    .icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 80%;
+        justify-items: stretch;
+        padding-top: 0.5rem;
+    }
+    img {
+        position: absolute;
+        top: -50px; /* Adjust this value to control how much the image peeks over */
+        right: 0;
+        z-index: 1;
+    }
+</style>

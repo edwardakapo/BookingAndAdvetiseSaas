@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Card from '../components/ui/Card.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Location from '../components/Location.astro';
 import Policies from '../components/Policies.astro';
+import ContactCard from '../components/ContactCard.astro';
+import HeroSection from '../components/HeroSection.astro';
 ---
 
 <Layout title="Braids Villa | Affordable Luxury Braiding Service">
 	<Header/>
 	<main>
+		<HeroSection />
 		<Location />
 		<Policies />
 		<svg
@@ -67,6 +70,7 @@ import Policies from '../components/Policies.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		<ContactCard />
 	</main>
 	<Footer/>
 </Layout>

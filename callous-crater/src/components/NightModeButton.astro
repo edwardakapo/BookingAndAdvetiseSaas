@@ -1,0 +1,80 @@
+---
+const props = Astro.props;
+---
+
+<div id="toggleMode">
+    <svg
+        id="nightSvg"
+        style="display: block"
+        xmlns="http://www.w3.org/2000/svg"
+        width="2.5em"
+        height="2.5em"
+        viewBox="0 0 24 16"
+    >
+        <g fill="currentColor">
+            <path
+                d="M6 .278a.77.77 0 0 1 .08.858a7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316a.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+            ></path>
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"
+            ></path>
+        </g>
+    </svg>
+
+    <svg
+        id="daySvg"
+        style="display: none"
+        xmlns="http://www.w3.org/2000/svg"
+        width="2.5em"
+        height="2.5em"
+        viewBox="0 0 256 256"
+    >
+        <path
+            fill="currentColor"
+            d="M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0m8 24a64 64 0 1 0 64 64a64.07 64.07 0 0 0-64-64m-69.66 5.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68l-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32M192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72m5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8m80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8m112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16"
+        ></path>
+    </svg>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleModeBtn = document.getElementById('toggleMode');
+        const nightSvg = document.getElementById('nightSvg')
+        const daySvg = document.getElementById('daySvg')
+        //const userPreference = window.matchMedia("(prefers-color-scheme : dark)");
+
+        // toggle theme
+        function toggleMode() {
+            const isDarkMode = document.documentElement.classList.toggle('dark')
+            //localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                    //matching the svg to the mode
+            if(daySvg && nightSvg){
+                if(document.documentElement.classList.contains('dark')){
+                    daySvg.style.display = 'block';
+                    nightSvg.style.display = 'none';
+                } else {
+                    daySvg.style.display = 'none';
+                    nightSvg.style.display = 'block';
+                }
+            }
+        }
+        // const savedTheme = localStorage.getItem('theme');
+		// 	if (savedTheme && daySvg && nightSvg) {
+		// 		document.documentElement.classList.toggle('dark', savedTheme === 'dark')
+        //         if(savedTheme === 'dark') {
+        //         daySvg.style.display = 'block';
+        //         nightSvg.style.display = 'none';
+        //         }
+		// 	}
+
+        //adding event listener
+        toggleModeBtn?.addEventListener('click', toggleMode)
+
+    })
+</script>
+
+<style>
+    #daySvg path{
+        fill : #FF7698;
+    }
+</style>

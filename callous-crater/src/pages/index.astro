@@ -1,10 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Location from '../components/Location.astro';
+import Policies from '../components/Policies.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Braids Villa | Affordable Luxury Braiding Service">
+	<Header/>
 	<main>
+		<Location />
+		<Policies />
 		<svg
 			class="astro-a"
 			width="495"
@@ -61,13 +68,14 @@ import Card from '../components/Card.astro';
 			/>
 		</ul>
 	</main>
+	<Footer/>
 </Layout>
 
 <style>
 	main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
+		width: 1000px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;

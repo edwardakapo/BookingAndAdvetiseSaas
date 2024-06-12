@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -13,6 +14,9 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chivo:wght@100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -20,6 +24,7 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -31,10 +36,47 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		
+		/*Light Theme*/
+		--background-color : #FFC2D1;
+		--main-text-color : #000000;
+		--secondary-text-color: #000000;
+		--primary-btn-color : #FF6F91;
+		--secondary-btn-color: #000000;
+
+		--transition-duration: 0.5s; 
+	}
+	:root.dark {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+		/*Color scheme for Webstie*/
+
+		/*Dark Theme*/
+		--background-color : #1E1E2E;
+		--main-text-color : #FAF3E0;
+		--secondary-text-color: #E5E1C9;
+		--secondary-btn-color: #FF6F91;
+	}
+	h1, h2 ,ul, hr {
+		color: var(--main-text-color);
+	}
+	p {
+		color: var(--secondary-text-color);
+	}
+	/* for smooth transition*/
+	html{
+		transition: background-color var(--transition-duration);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: "Chivo", system-ui, sans-serif;
+		background: var(--background-color);
 		background-size: 224px;
 	}
 	code {

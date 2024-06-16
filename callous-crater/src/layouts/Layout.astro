@@ -12,7 +12,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,12 +66,14 @@ const { title } = Astro.props;
 		--secondary-btn-color: #FF6F91;
 		--card-highlight-color : #1E1E1E;
 	}
+	
 	h1, h2 ,ul, hr {
 		color: var(--main-text-color);
 	}
 	p {
 		color: var(--secondary-text-color);
 	}
+
 	/* for smooth transition*/
 	html{
 		transition: background-color var(--transition-duration);
@@ -92,4 +94,6 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+
+
 </style>

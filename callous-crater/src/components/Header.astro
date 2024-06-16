@@ -1,6 +1,7 @@
 ---
 import NightModeButton from "./ui/NightModeButton.astro"
 import HeaderSocialLinks from "./ui/HeaderSocialLinks.astro"
+import DropDownMenu from "./ui/DropDownMenu.astro"
 ---
 
 <header>
@@ -22,6 +23,9 @@ import HeaderSocialLinks from "./ui/HeaderSocialLinks.astro"
                 <HeaderSocialLinks social="instagram" link="https://www.instagram.com/braids.villa/"/>
                 <HeaderSocialLinks social="tiktok" link="https://www.tiktok.com/@ore.db"/>       
                 <button id="headerBookBtn">BOOK APPOINTMENT</button>
+            </div>
+            <div class="dropDownMenuContainer">
+                <DropDownMenu />
             </div>
         </div>
         
@@ -50,27 +54,13 @@ import HeaderSocialLinks from "./ui/HeaderSocialLinks.astro"
         font-style: normal;
         font-optical-sizing: auto;
     }
-    .header {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        justify-items: center;
-        align-items: center;
-        margin : auto;
-		padding: 0rem 1rem;
-		max-width: 1440px;
-
-    }
     .header-shortcuts {
         display: flex;
         width: 60%;
         justify-content: space-between;
         
     }
-    .header-interactives {
-        display: flex;
-        gap: 3rem;
-        justify-self: end;
-    }
+
     #other-interactives {
         display: flex;
         gap: 0.5rem;
@@ -92,6 +82,57 @@ import HeaderSocialLinks from "./ui/HeaderSocialLinks.astro"
         font-weight: 400;
         font-style: normal;
         font-optical-sizing: auto;
+    }
+
+    /*Responsive styling for Mobile Phones*/
+    @media screen and (max-width: 600px){
+
+        .header {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        justify-items: center;
+        align-items: center;
+		padding: 0rem 0.5rem;
+        margin-bottom: 1.5rem;
+		max-width: 600px;
+        min-width: 270px;
+        }
+        .header-shortcuts {
+            display: none;
+        }
+        #other-interactives{
+            display: none;
+        }
+        .header-interactives {
+        display: flex;
+        gap : 1rem;
+        justify-self: end;
+    }
+    .Text-logo {
+        line-height: 30px;
+        --logo-size : 25px;
+    }
+    }
+
+    @media screen and (min-width: 601px){
+        .header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-items: center;
+        align-items: center;
+        margin : auto;
+		padding: 0rem 1rem;
+		max-width: 1440px;
+
+    }
+    .header-interactives {
+        display: flex;
+        gap: 3rem;
+        justify-self: end;
+    }
+    .dropDownMenuContainer {
+        display: none;
+    }
     }
 
 </style>

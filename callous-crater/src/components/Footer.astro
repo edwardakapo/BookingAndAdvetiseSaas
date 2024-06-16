@@ -10,15 +10,15 @@
     <hr>
     <div id="footer-bot">
         <p id="copywrite">&copy; 2024 Braids Villa. All rights reserved.</p>
-        <p> Privacy Policy</p>
-        <p> Terms of Service</p>
-        <p> Cookies Settings</p>
+        <p class="others"> Privacy Policy</p>
+        <p class="others"> Terms of Service</p>
+        <p class="others"> Cookies Settings</p>
     </div>
 </footer>
 
 <style>
     .footer {
-        padding: 0rem 1rem;
+        padding: 5rem 1rem 0rem 1rem;
         max-width: 1440px;
         margin: auto;
     }
@@ -54,4 +54,25 @@
         font-weight: 700;
     }
 
+    @media screen and (max-width : 600px) {
+        #footer-top h1 {
+        --logo-size: 25px;
+        line-height: 30px;
+        }
+        #footer-top p {
+        font-size: 10px;
+        }
+        .others {
+            display: none;
+        }
+        #footer-bot {
+        display: flex;
+        justify-content: flex-start;
+        }
+        #copywrite {
+        font-size: 10px;
+        }
+
+
+    }
 </style>

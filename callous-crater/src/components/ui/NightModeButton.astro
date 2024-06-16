@@ -7,8 +7,6 @@ const props = Astro.props;
         id="nightSvg"
         style="display: block"
         xmlns="http://www.w3.org/2000/svg"
-        width="2.5em"
-        height="2.5em"
         viewBox="0 0 24 16"
     >
         <g fill="currentColor">
@@ -25,8 +23,6 @@ const props = Astro.props;
         id="daySvg"
         style="display: none"
         xmlns="http://www.w3.org/2000/svg"
-        width="2.5em"
-        height="2.5em"
         viewBox="0 0 256 256"
     >
         <path
@@ -74,7 +70,21 @@ const props = Astro.props;
 </script>
 
 <style>
+
     #daySvg path{
         fill : #FF7698;
     }
+    @media screen and (max-width: 600px) {
+        svg {
+        width: 2rem;
+        height: 2rem;
+    }
+	}
+	/* Tablet Layout */
+	@media screen and (min-width : 601px){
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+	}
 </style>

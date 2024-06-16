@@ -4,13 +4,13 @@
 
 <section id="heroSection">
     <h1>
-        Elevate Your Style <br/> With Our Affordable Luxury  <br/>  Braiding Service
+        Elevate Your Style <br/> With Our <br id="mobileLineBreak"/> Affordable Luxury  <br/>  Braiding Service
     </h1>
     <h2>
-        Plenty of braiding experience to make you shine! <br/> Giving you a luxurious experience leaving you feeling gorgeous and confident.
+        Plenty of braiding experience <br id="mobileLineBreak"/> to make you shine! <br/> Giving you a luxurious experience leaving you feeling gorgeous and confident.
     </h2>
     <div>
-        <button> Book an Appointment Now!</button>
+        <button> Book Appointment Now!</button>
         <p>Please read our <a href=""> Policy</a> and <a href=""> Location </a> info before booking</p>
     </div>
 </section>
@@ -28,7 +28,7 @@
         --text-size : 65px;
        font-size: var(--text-size);
        font-weight: 900;
-       letter-spacing: calc(var(--text-size) * 0.04);
+       letter-spacing: calc(var(--text-size) * 0.05);
        line-height: 77px;
        margin-bottom: -1rem;
 
@@ -57,5 +57,49 @@
         background-color: #FF7698;
         border: none;
     }
+
+    @media screen and (max-width: 600px) {
+        section {
+            margin-bottom: 5rem;
+        }
+        h1 {
+            --text-size : 34px;
+            line-height: 45px;
+        }
+        h2 {
+            --text-size : 16px;
+            line-height: 30px;
+        }
+        #mobileLineBreak {
+            display: block;
+        }
+        button {
+        width: 220px;
+        height: 50px;
+        font-family: "Chivo", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 30px;
+        background-color: #FF7698;
+        border: none;
+    }
+
+    p {
+        font-size: 8px;
+        font-weight: 200;
+    }
+		
+	}
+	/* Tablet Layout */
+	@media screen and (max-width: 980px) {
+		
+	}
+
+	/* Desktop Layout */
+	@media screen and (min-width : 981px) {
+        #mobileLineBreak {
+            display: none;
+        }
+	}
 </style>
 

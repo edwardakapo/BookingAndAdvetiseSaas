@@ -1,0 +1,153 @@
+---
+
+---
+
+<div>
+    <div id="toggleMenuMode">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="MenuClosed"
+            style="display: block; transition: opacity 0.2s ease;"
+        >
+            <path
+                fill="var(--secondary-btn-color)"
+                d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1"
+            ></path>
+        </svg>
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="MenuOpen"
+            style="display: none; transition: opacity 0.2s ease;"
+        >
+            <path
+                fill="var(--secondary-btn-color)"
+                stroke="var(--secondary-btn-color)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="m7 10l5 5m0 0l5-5"></path>
+        </svg>
+    </div>
+
+    <!-- change to make inviz after styling -->
+    <div
+        id="dropdown"
+        style="display : none;  opacity: 0; transition: opacity 0.5s ease;"
+    >
+        <p>Policies</p>
+        <p>Location</p>
+        <p>Contact</p>
+        <button>Book Now</button>
+    </div>
+</div>
+
+<style>
+    #toggleMenuMode {
+        position: relative;
+    }
+    #dropdown {
+        width: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        right: 3%;
+        margin-top: 30px;
+        border: 1px solid;
+        /* border-color: var(--main-text-color); */
+        background-color: var(--card-highlight-color);
+        /* background-co?lor: #FF6F91; */
+        border-radius: 5px;
+        padding: 0rem 0.5rem 1rem 0.5rem;
+    }
+    p {
+        font-size: 14px;
+    }
+    button {
+        padding: 1px 1px 0px 0px;
+        margin-top: 0.5rem;
+        width: 75px;
+        height: 30px;
+        background: none;
+        border: 1px solid;
+        border-color: var(--secondary-btn-color);
+        color: var(--secondary-btn-color);
+        text-align: center;
+        font-family: "Chivo" , sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+
+    }
+    @media screen and (max-width: 600px) {
+        svg {
+        width: 2rem;
+        height: 2rem;
+    }
+	}
+	/* Tablet Layout */
+	@media screen and (min-width : 601px) {
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+	}
+</style>
+<script>
+    let isOpen = false;
+    const menubar = document.getElementById("MenuClosed");
+    const downArrow = document.getElementById("MenuOpen");
+    const toggleBtn = document.getElementById("toggleMenuMode");
+    const dropdown = document.getElementById("dropdown");
+
+    // Change between menubar open and closed SVGs
+    function toggleMenu() {
+        isOpen = !isOpen;
+        if (menubar && downArrow && dropdown) {
+            if (isOpen) {
+                menubar.style.opacity = "0";
+                downArrow.style.opacity = "1";
+                setTimeout(() => {
+                    menubar.style.display = "none";
+                    downArrow.style.display = "block";
+                    dropdown.style.display = "block";
+                    setTimeout(() => {
+                        dropdown.style.opacity = "1";
+                    }, 10); // Small delay to ensure display change is registered
+                }, 200); // Match the transition duration
+            } else {
+                dropdown.style.opacity = "0";
+                menubar.style.display = "block";
+                downArrow.style.display = "none";
+                dropdown.style.display = "none";
+                menubar.style.opacity = "1";
+                downArrow.style.opacity = "0"; // Match the transition duration
+            }
+        }
+    }
+
+    /*
+     * @param {MouseEvent} event
+     */
+    // Close the menu if clicked outside
+    function handleClickOutside(event: MouseEvent) {
+        if (menubar && downArrow && dropdown && toggleBtn) {
+            if (isOpen && !toggleBtn.contains(event.target as Node) && !dropdown.contains(event.target as Node) ) 
+            {
+                isOpen = false;
+                dropdown.style.opacity = "0";
+                dropdown.style.display = "none";
+                menubar.style.display = "block";
+                downArrow.style.display = "none";
+                menubar.style.opacity = "1";
+                downArrow.style.opacity = "0";
+            }
+        }
+    }
+
+    toggleBtn?.addEventListener("click", toggleMenu);
+    document.addEventListener("click", handleClickOutside);
+</script>

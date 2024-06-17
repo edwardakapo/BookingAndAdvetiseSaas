@@ -27,16 +27,7 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-		
+
 		/*Light Theme*/
 		--background-color : #FFC2D1;
 		--main-text-color : #000000;
@@ -48,17 +39,6 @@ const { title } = Astro.props;
 		--transition-duration: 0.5s; 
 	}
 	:root.dark {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-		/*Color scheme for Webstie*/
-
 		/*Dark Theme*/
 		--background-color : #0a0a0a;
 		--main-text-color : #FAF3E0;
@@ -81,7 +61,6 @@ const { title } = Astro.props;
 	html {
 		font-family: "Chivo", system-ui, sans-serif;
 		background: var(--background-color);
-		background-size: 224px;
 	}
 	code {
 		font-family:

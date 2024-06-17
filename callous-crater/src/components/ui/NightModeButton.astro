@@ -81,10 +81,24 @@ const props = Astro.props;
     }
 	}
 	/* Tablet Layout */
-	@media screen and (min-width : 601px){
+	@media screen and (min-width : 601px) and (max-width : 860px){
         svg {
             width: 2.5rem;
             height: 2.5rem;
         }
 	}
+    @media screen and (min-width : 861px) and (max-width : 1200px){
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+	}
+    @media screen and (min-width : 1201px){
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+	}
+
+
 </style>

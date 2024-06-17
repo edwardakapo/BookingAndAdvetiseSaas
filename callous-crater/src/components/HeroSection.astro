@@ -4,13 +4,14 @@
 
 <section id="heroSection">
     <h1>
-        Elevate Your Style <br/> With Our <br id="mobileLineBreak"/> Affordable Luxury  <br/>  Braiding Service
+        Elevate Your Style <br/> With Our Affordable Luxury  <br/>  Braiding Service
     </h1>
     <h2>
-        Plenty of braiding experience <br id="mobileLineBreak"/> to make you shine! <br/> Giving you a luxurious experience leaving you feeling gorgeous and confident.
+        Plenty Of Braiding Experience To Make You Shine! <br/> Giving You A Luxurious Experience Leaving You Feeling Gorgeous And Confident.
     </h2>
     <div>
-        <button> Book Appointment Now!</button>
+        <button class="mobileBtn"> Book Appointment Now!</button>
+        <button class="biggerBtn"> Book An Appointment Now!</button>
         <p>Please read our <a href=""> Policy</a> and <a href=""> Location </a> info before booking</p>
     </div>
 </section>
@@ -22,84 +23,93 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         row-gap: 2rem;
+        padding-bottom: 5rem;
     }
     h1 {
-        --text-size : 65px;
        font-size: var(--text-size);
        font-weight: 900;
        letter-spacing: calc(var(--text-size) * 0.05);
-       line-height: 77px;
        margin-bottom: -1rem;
 
     }
 
     h2 {
-        --text-size : 20px;
        font-size: var(--text-size);
        letter-spacing: calc(var(--text-size) * 0.10);
-       font-weight: 300;
-       line-height: 34px;
+       font-weight: 400;
     }
 
-    p {
-        font-size: 14px;
-        font-weight: 200;
-    }
-
-    button {
-        width: 477px;
-        height: 70px;
-        font-family: "Chivo", sans-serif;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 30px;
-        background-color: #FF7698;
-        border: none;
-    }
-
+    /* Mobile 380px -> 600px */
     @media screen and (max-width: 600px) {
-        section {
-            margin-bottom: 5rem;
-        }
         h1 {
-            --text-size : 34px;
-            line-height: 45px;
+            --text-size : 6vw;
+            line-height: 1.4;
         }
         h2 {
-            --text-size : 16px;
-            line-height: 30px;
-        }
-        #mobileLineBreak {
-            display: block;
+            --text-size : clamp(0.6rem, 3vw , 14px);
+            line-height: 1.8;
+            max-width: 400px;
         }
         button {
-        width: 220px;
-        height: 50px;
+        width: clamp(210px, 50vw , 260px);
+        height: clamp(40px, 12vw, 50px);
         font-family: "Chivo", sans-serif;
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 500;
         line-height: 30px;
         background-color: #FF7698;
         border: none;
-    }
+        }
 
-    p {
-        font-size: 8px;
-        font-weight: 200;
-    }
-		
-	}
-	/* Tablet Layout */
-	@media screen and (max-width: 980px) {
-		
-	}
-
-	/* Desktop Layout */
-	@media screen and (min-width : 981px) {
-        #mobileLineBreak {
+        p {
+            font-size: clamp(8px, 1.8vw, 10px);
+            font-weight: 200;
+        }
+        .biggerBtn {
             display: none;
         }
+		
 	}
+	/* Tablet -> Desktop Layout 601-> 1440px max */
+       @media screen and (min-width: 601px) {
+        h1 {
+            --text-size : clamp(35px, 5.5vw ,65px);
+            line-height: 1.25;
+        }
+        h2 {
+            --text-size : clamp(13px, 1.5vw , 19px);
+            line-height: 1.9;
+            width: 90%;
+        }
+        button {
+            width: clamp(260px, 40vw , 450px);
+            height: clamp(50px, 7vw, 70px);
+            font-family: "Chivo", sans-serif;
+            font-size: clamp(15px, 2vw, 22px);
+            font-weight: 500;
+            line-height: 1.2;
+            background-color: #FF7698;
+            border: none;
+        }
+
+        p {
+            font-size: clamp(8px, 1.2vw, 12px);
+            font-weight: 200;
+        }
+        
+        .mobileBtn {
+            display: none;
+        }
+		
+	}
+    @media screen and (min-width : 980px) {
+        section {
+            row-gap: 2rem;
+        }
+    }
+	
 </style>
 

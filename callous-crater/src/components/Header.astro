@@ -90,7 +90,6 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         .header {
         display: grid;
         grid-template-columns: 3fr 1fr;
-        justify-items: center;
         align-items: center;
 		padding: 0rem 0.5rem;
         margin-bottom: 1.5rem;
@@ -104,20 +103,93 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
             display: none;
         }
         .header-interactives {
-        display: flex;
-        gap : 1rem;
-        justify-self: end;
-    }
-    .Text-logo {
-        line-height: 30px;
-        --logo-size : 25px;
-    }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: end;
+        }
+        .Text-logo {
+            line-height: 30px;
+            --logo-size : 25px;
+        }
     }
 
-    @media screen and (min-width: 601px){
+    @media screen and (min-width : 601px) and (max-width: 860px) {
         .header {
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+		padding: 0rem 1.5rem;
+        margin-bottom: 1.5rem;
+		max-width: 980px;
+        min-width: 520px;
+        }
+        .header-shortcuts {
+            display: none;
+        }
+        #other-interactives{
+            display: none;
+        }
+        .header-interactives {
+        display: flex;
+        gap : 2rem;
+        justify-self: end;
+        }
+        .Text-logo {
+            line-height: 35px;
+            --logo-size : 28px;
+        }
+    }
+    /* Fixing sizing on medium - large tablets */
+        @media screen and (min-width: 861px) and (max-width: 1200px) {
+            .header {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            justify-items: center;
+            align-items: center;
+            margin : auto;
+            padding: 0rem 1rem;
+            max-width: 1200px;
+
+        }
+            .header-interactives {
+                display: flex;
+                gap: 1.5rem;
+                justify-self: end;
+            }
+            .dropDownMenuContainer {
+                display: none;
+            }
+            .Text-logo {
+                line-height: 30px;
+                --logo-size : 23px;
+            }
+            p {
+                --text-size : 14px;
+            }
+            #headerBookBtn {
+            width: 120px;
+            height: 35px;
+            margin-left: 0.5rem;
+            background: none;
+            color: var(--secondary-btn-color);
+            border: 1px solid;
+            /*text*/
+            --text-size: 9px;
+            font-family: "Chivo", sans-serif;
+            font-size: var(--text-size);
+            line-height: 24px;
+            font-weight: 400;
+            font-style: normal;
+            font-optical-sizing: auto;
+        }
+    }
+
+    @media screen and (min-width: 1201px) {
+        .header {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
         justify-items: center;
         align-items: center;
         margin : auto;
@@ -125,14 +197,14 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
 		max-width: 1440px;
 
     }
-    .header-interactives {
-        display: flex;
-        gap: 3rem;
-        justify-self: end;
-    }
-    .dropDownMenuContainer {
-        display: none;
-    }
+        .header-interactives {
+            display: flex;
+            gap: 1.5rem;
+            justify-self: end;
+        }
+        .dropDownMenuContainer {
+            display: none;
+        }
     }
 
 </style>

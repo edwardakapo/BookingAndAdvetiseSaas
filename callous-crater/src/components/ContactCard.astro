@@ -26,7 +26,7 @@ import ContactIcon from "./ui/ContactIcon.astro"
         display: flex;
         flex-direction: column;
         width: 90%;
-        max-width: 350px ;
+        max-width: 450px ;
         margin: auto;
         text-align: center;
         align-items: center;
@@ -37,24 +37,24 @@ import ContactIcon from "./ui/ContactIcon.astro"
         padding: 1rem 0rem;
     }
         h1 {
-            font-size: clamp(19px, 5vw, 24px);
+            font-size: clamp(26px, 5.5vw, 30px);
             font-weight: 900;
         }
         h2 {
-            font-size: clamp(15px, 3vw, 18px);
+            font-size: clamp(22px, 3vw, 25px);
             font-weight: 400;
         }
         p {
             text-align: left;
             line-height: 1.8;
-            font-size: 12px;
+            font-size: clamp(16px, 3vw, 18px);
             font-weight: 300;
-            max-width: 250px;
+            max-width: 350px;
             width: 80%;
             margin-bottom: 2rem;
         }
         .contact-image {
-                width: 80px;
+                width: 120px;
                 border-radius: 100%;
                 padding-top: 10px;
                 object-fit: cover;
@@ -63,7 +63,7 @@ import ContactIcon from "./ui/ContactIcon.astro"
         .icons {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        width: 70%;
+        width: 90%;
         }
     }
 

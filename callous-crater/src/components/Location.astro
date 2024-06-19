@@ -5,12 +5,15 @@
 <section id="Location">
     <div>
         <h1 class="header">Location and Hours</h1>
-        <p class="top-text">
-            Mainly Serving Hamilton, Guelph and Surrounding areas. Available for home service for extra charges based on location, you can  <a href=""> Contact Me </a> for more information.
+        <p class="mobileText">
+            Mainly Serving Hamilton, Guelph and Surrounding areas. Available for home service for extra charges based on location, you can  <a href=""> Contact Me </a> for more information. <br> <br>Monday &rarr; Sunday 9:30am - 7:30pm
+        </p>
+        <p class="largeText">
+            Mainly Serving Hamilton, Guelph and Surrounding areas.<br> Available for home service for extra charges based on location, you can <br> <a href=""> Contact Me </a> for more information. <br> <br>Monday &rarr; Sunday 9:30am - 7:30pm
         </p>
     </div>
+    <!-- <p>Monday &rarr; Sunday 9:30am - 7:30pm</p> -->
 
-    <p>Monday &rarr; Sunday 9:30am - 7:30pm</p>
 
 </section>
 
@@ -43,12 +46,12 @@
             width: 90%; 
             max-width: 445px;
         }
-        .header,.top-text {
-            width: 100%;
-        }
         p {
             text-align: left;
             font-size: clamp(16px,4vw, 20px);
+        }
+        .largeText {
+            display: none;
         }
     }
     @media screen and (min-width: 601px) {
@@ -68,6 +71,9 @@
             text-align: center;
             margin-bottom: 2rem;
             font-size: clamp(12px, 2vw, 20px);
+        }
+        .mobileText {
+            display: none;
         }
     }
 </style>

@@ -5,7 +5,7 @@
 <footer class="footer">
     <div id="footer-top">
         <p>Designed by <a href="https://edwardakapo.netlify.app/" target="_blank">Edward Akapo</a></p>
-        <h1>BRAIDS <br/> VILLA</h1>
+        <h1>BRAIDS <br/> <span class="text-logo-small">VILLA</span></h1>
     </div>
     <hr>
     <div id="footer-bot">
@@ -36,11 +36,14 @@
         --logo-size: 28px;
         font-size: var(--logo-size);
         text-align: center;
-        line-height: 40px;
+        line-height: 30px;
         letter-spacing: calc(var(--logo-size) * 0.05);
         font-family: "Abril Fatface", serif;
         font-weight: 400;
         font-style: normal;
+    }
+    .text-logo-small {
+        font-size: 26px;
     }
     #footer-bot {
         display: flex;
@@ -60,8 +63,11 @@
     @media screen and (max-width : 600px) {
         #footer-top h1 {
         --logo-size: 25px;
-        line-height: 30px;
+        line-height: 25px;
         }
+        .text-logo-small {
+        font-size: 24px;
+    }
         #footer-top p {
         font-size: 10px;
         }
@@ -75,6 +81,25 @@
         #copywrite {
         font-size: 10px;
         }
+
+
+    }
+    @media screen and (min-width: 1080px) {
+        #footer-bot {
+        gap: 4rem;
+        font-size: 17px;
+        }
+
+        #copywrite {
+            font-weight: 700;
+        }
+        .others {
+            font-size: 17px;
+        }
+        #footer-top p {
+        font-size: 14px;
+        }
+
 
 
     }

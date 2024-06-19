@@ -3,17 +3,15 @@
 ---
 
 <section id="Location">
-    <h1>Location and Hours</h1>
-    <p>
-        Mainly Serving Hamilton, Guelph and Surrounding areas. <br />Available
-        for home service for extra charges based on location, you can <br /><a
-            href=""
-        >
-            Contact Me
-        </a> for more information.
-    </p>
+    <div>
+        <h1 class="header">Location and Hours</h1>
+        <p class="top-text">
+            Mainly Serving Hamilton, Guelph and Surrounding areas. Available for home service for extra charges based on location, you can  <a href=""> Contact Me </a> for more information.
+        </p>
+    </div>
 
     <p>Monday &rarr; Sunday 9:30am - 7:30pm</p>
+
 </section>
 
 <style>
@@ -21,30 +19,43 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        align-content: center;
         justify-content: center;
+        margin: auto;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        row-gap: 1rem;
     }
     @media screen and (max-width: 600px) {
         section {
             margin-bottom: 5rem;
         }
         h1 {
-            font-size: clamp(19px, 6vw, 24px);
+            font-size: clamp(30px, 7vw, 35px);
             font-weight: 900;
             text-align: center;
+            margin: 0;
+        }
+        div {
+            width: 90%; 
+            max-width: 445px;
+        }
+        .header,.top-text {
+            width: 100%;
         }
         p {
-            width: 70%;
-            padding: 0rem 0.6rem;
             text-align: left;
-            font-size: 12px;
+            font-size: clamp(16px,4vw, 20px);
         }
     }
     @media screen and (min-width: 601px) {
         section {
             width: 90%;
             margin: auto;
-            padding-bottom: 7rem;
+            padding-bottom: 6rem;
         }
         h1 {
             font-size: clamp(24px, 5vw, 40px);

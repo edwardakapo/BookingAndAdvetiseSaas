@@ -7,7 +7,7 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
 <header>
     <nav class="header">
 
-        <h1 class="Text-logo">BRAIDS<br/>VILLA</h1>
+        <h1 class="Text-logo">BRAIDS<br/> <span class="text-logo-small">VILLA</span></h1>
 
         <div class="header-shortcuts">
             <p> Policies</p>
@@ -37,12 +37,15 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         --logo-size: 28px;
         font-size: var(--logo-size);
         text-align: center;
-        line-height: 40px;
+        line-height: 30px;
         letter-spacing: calc(var(--logo-size) * 0.05);
         font-family: "Abril Fatface", serif;
         font-weight: 400;
         font-style: normal;
         justify-self: start;
+    }
+    .text-logo-small {
+        font-size: 27px;
     }
     p {
         --text-size: 18px;
@@ -109,9 +112,12 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         justify-items: end;
         }
         .Text-logo {
-            line-height: 30px;
+            line-height: 25px;
             --logo-size : 25px;
         }
+        .text-logo-small {
+        font-size: 24px;
+    }
     }
 
     @media screen and (min-width : 601px) and (max-width: 860px) {
@@ -135,10 +141,6 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         gap : 2rem;
         justify-self: end;
         }
-        .Text-logo {
-            line-height: 35px;
-            --logo-size : 28px;
-        }
     }
     /* Fixing sizing on medium - large tablets */
         @media screen and (min-width: 861px) and (max-width: 1200px) {
@@ -161,8 +163,11 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
                 display: none;
             }
             .Text-logo {
-                line-height: 30px;
+                line-height: 25px;
                 --logo-size : 23px;
+            }
+            .text-logo-small {
+                font-size: 22px;
             }
             p {
                 --text-size : 14px;

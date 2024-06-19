@@ -3,33 +3,35 @@
 ---
 
 <section id="Location">
-        <h1> Location and Hours </h1>
-        <p>
-            Mainly Serving Hamilton, Guelph and Surrounding areas. <br>Available for home service for extra charges based on location, you can <br><a href=""> Contact Me </a> for more information.
-        </p>
+    <h1>Location and Hours</h1>
+    <p>
+        Mainly Serving Hamilton, Guelph and Surrounding areas. <br />Available
+        for home service for extra charges based on location, you can <br /><a
+            href=""
+        >
+            Contact Me
+        </a> for more information.
+    </p>
 
-        <p>
-            Monday &rarr; Sunday   9:30am - 7:30pm
-        </p>
+    <p>Monday &rarr; Sunday 9:30am - 7:30pm</p>
 </section>
 
 <style>
-        section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            align-content: center;
-            justify-content: center;
-        }
-    @media screen and (max-width : 600px){
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    @media screen and (max-width: 600px) {
         section {
             margin-bottom: 5rem;
         }
         h1 {
-            font-size: clamp(19px, 6vw , 24px);
+            font-size: clamp(19px, 6vw, 24px);
             font-weight: 900;
             text-align: center;
-            
         }
         p {
             width: 70%;
@@ -38,25 +40,23 @@
             font-size: 12px;
         }
     }
-    @media screen and (min-width : 601px){
+    @media screen and (min-width: 601px) {
         section {
-        width: 90%;
-        margin: auto;
-        padding-bottom: 5rem;
+            width: 90%;
+            margin: auto;
+            padding-bottom: 7rem;
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 40px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: -0.5rem;
+            padding-bottom: 1.5rem;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: clamp(12px, 2vw, 20px);
+        }
     }
-    h1 {
-        font-size: clamp(24px,5vw,40px);
-        font-weight: 900;
-        text-align: center;
-        margin-bottom: -0.5rem;
-        
-    }
-    p {
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: clamp(12px,2vw,20px);
-
-    }
-    }
-
 </style>

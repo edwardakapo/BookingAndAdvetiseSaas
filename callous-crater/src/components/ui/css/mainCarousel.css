@@ -1,0 +1,54 @@
+.embla-Carousel {
+      max-width: 100vw;
+      margin: auto;
+      --slide1-height: 19rem;
+      --slide1-spacing: 1rem;
+      --slide1-size: 100%;
+      --slide1-width :380px;
+  }
+  .embla-Carousel__viewport {
+    overflow: clip;
+    overflow-clip-margin: 24px;
+
+  }
+  .embla-Carousel__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide1-spacing) * -1);
+  }
+  
+  .embla-Carousel__slide {
+    flex: 0 0 var(--slide1-width);
+    min-width: 0;
+    padding-left: var(--slide1-spacing);
+    transform-origin: top center; /* Scale from the top center */
+
+  }
+
+  .embla-Carousel__slide__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .embla-Carousel {
+        --slide1-width: 300px; /* Adjust width for smaller screens */
+        --slide1-spacing: 0.5rem; /* Adjust spacing for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .embla-Carousel {
+        --slide1-width: 80%; /* Full width for very small screens */
+        --slide1-spacing: 0.25rem; /* Adjust spacing for very small screens */
+    }
+    .embla-Carousel__viewport {
+      overflow: clip;
+      overflow-clip-margin: 7.3px;
+  
+    }
+}

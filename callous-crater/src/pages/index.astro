@@ -6,15 +6,21 @@ import Location from '../components/Location.astro';
 import Policies from '../components/Policies.astro';
 import ContactCard from '../components/ContactCard.astro';
 import HeroSection from '../components/HeroSection.astro';
+import BookingSection from '../components/BookingSection.astro';
+import MainCarousel from '../components/MainCarousel.astro';
+// import {ToastContainer} from 'react-toastify'
 ---
 
 <Layout title="Braids Villa | Affordable Luxury Braiding Service">
 	<Header/>
 	<main>
 		<HeroSection />
+		<MainCarousel />
 		<Location />
 		<Policies />
+		<BookingSection />
 		<ContactCard />
+		<!-- <ToastContainer /> -->
 	</main>
 	<Footer/>
 </Layout>
@@ -44,7 +50,7 @@ import HeroSection from '../components/HeroSection.astro';
 			main {
 			margin: auto;
 			padding: 1rem;
-			max-width: 1100px;
+			/* max-width: 1200px; */
 			color: white;
 			font-size: 20px;
 			line-height: 1.6;
@@ -52,3 +58,4 @@ import HeroSection from '../components/HeroSection.astro';
 	}
 			
 </style>
+<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

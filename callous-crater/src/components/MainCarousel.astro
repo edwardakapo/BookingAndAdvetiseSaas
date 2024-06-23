@@ -1,0 +1,30 @@
+---
+import Carousel from './ui/Carousel.jsx'
+import ScrollingCarousel from './ui/ScrollingCarousel'
+
+const Images = [
+        "https://img.freepik.com/free-vector/hot-dog-street-snack-isolated-transparent_107791-18353.jpg?t=st=1718898461~exp=1718902061~hmac=c9d39a5399875c4eb3b1011a80922f3e71d2bfac3e6899a6e209e257d65c12b8&w=996",
+        "https://img.freepik.com/free-photo/photo-delicious-hamburger-isolated-white-background_125540-3378.jpg?w=1060&t=st=1718898841~exp=1718899441~hmac=9ceb4d02f008ba45e253acf66bc1d73f59b32cc44dd2ed5ae2796cce5fe6fb61",
+        "https://img.freepik.com/free-psd/arm-chair-isolated-transparent-background_191095-12827.jpg?t=st=1718898866~exp=1718902466~hmac=1c1add9a5735fca4a705a41bc36b1cae85e57e24f77a5a379a6ded98ffa47102&w=740",
+        "https://img.freepik.com/free-psd/sun-hat-png-isolated-transparent-background_191095-9871.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-psd/3d-alarm-clock-isolated-transparent-background_191095-16375.jpg?t=st=1718954109~exp=1718957709~hmac=13b73a8d31681121e6e08817d1709ba6aeffc446afe0a161cc1d8fc6bb5fe41f&w=740",
+        "https://img.freepik.com/free-psd/mix-fruits-png-isolated-transparent-background_191095-9865.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-vector/shining-circle-purple-lighting-isolated-dark-background_1441-2396.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-vector/red-rooster-cock-side-view-abstract_1284-16627.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-vector/isolated-rose-flower-line-art-with-leaf-clipart_41066-2958.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-psd/bougainvillea-flower-isolated-transparent-background_191095-33338.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-psd/white-shopping-paper-bag-isolated-background_1409-3556.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-psd/azalea-flower-isolated-transparent-background_191095-33439.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+        "https://img.freepik.com/free-vector/red-sauce-splashes-set_107791-28899.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
+    ]
+---
+
+<section>
+    <ScrollingCarousel images={Images} client:load/>
+</section>
+
+<style>
+    section {
+        padding-bottom: 5rem;
+    }
+</style>

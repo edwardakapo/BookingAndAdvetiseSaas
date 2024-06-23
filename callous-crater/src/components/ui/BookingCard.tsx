@@ -1,4 +1,3 @@
-import React from "react";
 import EmblaCarousel from "./EmblaCarousel";
 import './css/bookingCarousel.css'
 import './css/bookingCard.css'

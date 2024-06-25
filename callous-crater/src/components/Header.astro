@@ -6,13 +6,12 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
 
 <header>
     <nav class="header">
-
-        <h1 class="Text-logo">BRAIDS<br/> <span class="text-logo-small">VILLA</span></h1>
+            <h1 class="Text-logo"><a href="https://braidsvilla.com/" id="logo-link">BRAIDS<br/> <span class="text-logo-small">VILLA</span></a></h1>
 
         <div class="header-shortcuts">
-            <p> Policies</p>
-            <p> Locations</p>
-            <p> Contact</p>
+            <a href="#Policies"><p> Policies</p></a>
+            <a href="#Location"><p> Locations</p></a>
+            <a href="#Contact"><p> Contact</p></a>
         </div>
 
         <div class="header-interactives">
@@ -21,8 +20,10 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
             </div>
             <div id="other-interactives">
                 <HeaderSocialLinks social="instagram" link="https://www.instagram.com/braids.villa/"/>
-                <HeaderSocialLinks social="tiktok" link="https://www.tiktok.com/@ore.db"/>       
-                <button id="headerBookBtn">BOOK APPOINTMENT</button>
+                <HeaderSocialLinks social="tiktok" link="https://www.tiktok.com/@ore.db"/>
+                <a href="#Booking">
+                    <button id="headerBookBtn">BOOK APPOINTMENT</button>
+                </a>     
             </div>
             <div class="dropDownMenuContainer">
                 <DropDownMenu />
@@ -63,7 +64,25 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         justify-content: space-between;
         
     }
+    a {    
+        text-decoration: none;
+        color: inherit;
+    }
+    div p:hover {
+        color : #f72a5a;
 
+    }
+    #logo-link:active {
+        text-decoration: none;
+        color: inherit;
+    }
+    #logo-link:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+    #logo-link:hover {
+        color : #f72a5a;
+    }
     #other-interactives {
         display: flex;
         gap: 0.5rem;
@@ -85,6 +104,14 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         font-weight: 400;
         font-style: normal;
         font-optical-sizing: auto;
+    }
+    #nightModeBtn:hover {
+        cursor: pointer;
+    }
+    #headerBookBtn:hover {
+        color: var(--hover-color); /* Change to your desired hover text color */
+        border-color: var(--hover-color); /* Change to your desired hover border color */
+        cursor: pointer;
     }
 
     /*Responsive styling for Mobile Phones*/

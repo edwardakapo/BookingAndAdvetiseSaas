@@ -19,6 +19,7 @@ const Images = [
 ---
 
 <section>
+    <p id="season-text"></p>
     <ScrollingCarousel images={Images} client:load/>
 </section>
 
@@ -26,4 +27,40 @@ const Images = [
     section {
         padding-bottom: 5rem;
     }
+    #season-text {
+        font-family: "Abril Fatface", serif;
+        font-size: 14px;
+        margin: 0;
+        padding-bottom:0.5rem;
+    }
+    @media screen and (min-width:800px) {
+        section {
+            padding-top: 1.5rem
+            
+        }
+        #season-text {
+        font-size: 18px;
+        } 
+    }
 </style>
+
+<script>
+
+function getSeason() {
+        const month = new Date().getMonth();
+        if (month >= 2 && month <= 4) {
+            return "Spring's";
+        } else if (month >= 5 && month <= 7) {
+            return "Summer's";
+        } else if (month >= 8 && month <= 10) {
+            return "Fall's";
+        } else {
+            return "Winter's";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const seasonText = document.getElementById('season-text');
+        seasonText.textContent = getSeason() + ' Must Have Styles';
+    });
+</script>

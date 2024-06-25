@@ -1,66 +1,84 @@
 ---
 const { icon, string } = Astro.props;
+
+const getHref = (icon, string) => {
+  switch (icon) {
+    case "email":
+      return `mailto:${string}`;
+    case "instagram":
+      return `https://instagram.com/${string}`;
+    case "phone":
+      return `tel:${string}`;
+    default:
+      return "#";
+  }
+};
 ---
 
 { icon === "email" && (
+    <a href={getHref(icon,string)}>
+        <div>
+            <svg
+                id="emailIcon"
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    fill="var(--main-text-color)"
+                    d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"
+                ></path>
+            </svg>
 
-    <div>
-        <svg
-            id="emailIcon"
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-        >
-            <path
-                fill="var(--main-text-color)"
-                d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"
-            ></path>
-        </svg>
+            <p> {string}</p>
 
-        <p> {string}</p>
-
-    </div>
+        </div>
+    </a>
 
 )}
 
 {icon === "instagram" && (
-    <div>
-        <svg
-            id="instagramIcon"
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-        >
-            <path
-                fill="var(--main-text-color)"
-                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-            ></path>
-        </svg>
+    <a href={getHref(icon,string)} target="_blank">
+        <div>
+            <svg
+                id="instagramIcon"
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    fill="var(--main-text-color)"
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                ></path>
+            </svg>
 
-        <p>{string}</p>
-    </div>
+            <p>{string}</p>
+        </div>
+    </a>
 )}
 
 {icon === "phone" && (
-    <div>
-        <svg
-            id="phoneIcon"
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-        >
-            <path
-                fill="none"
-                stroke="var(--main-text-color)"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19.506 7.96A16.027 16.027 0 0 1 7.96 19.506C5.819 20.051 4 18.21 4 16v-1c0-.552.449-.995.999-1.05a9.94 9.94 0 0 0 2.656-.639l1.519 1.52a12.049 12.049 0 0 0 5.657-5.657l-1.52-1.52a9.94 9.94 0 0 0 .64-2.656C14.005 4.448 14.448 4 15 4h1c2.208 0 4.05 1.819 3.505 3.96"
-            ></path>
-        </svg>
+    <a href={getHref(icon,string)}>
+        <div>
+            <svg
+                id="phoneIcon"
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    fill="none"
+                    stroke="var(--main-text-color)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19.506 7.96A16.027 16.027 0 0 1 7.96 19.506C5.819 20.051 4 18.21 4 16v-1c0-.552.449-.995.999-1.05a9.94 9.94 0 0 0 2.656-.639l1.519 1.52a12.049 12.049 0 0 0 5.657-5.657l-1.52-1.52a9.94 9.94 0 0 0 .64-2.656C14.005 4.448 14.448 4 15 4h1c2.208 0 4.05 1.819 3.505 3.96"
+                ></path>
+            </svg>
 
-        <p>{string}</p>
-    </div>
+            <p>{string}</p>
+        </div>
+    </a>
 )}
 
 <style>
@@ -72,6 +90,13 @@ const { icon, string } = Astro.props;
     }
     p {
         font-weight: 300;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+
     }
     @media screen and (max-width: 600px) {
         svg  {

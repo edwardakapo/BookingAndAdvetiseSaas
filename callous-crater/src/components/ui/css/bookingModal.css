@@ -7,6 +7,11 @@
     font-size: 15px;
     color: var(--secondary-btn-color);
 }
+.booking-Btn:hover {
+    cursor: pointer;
+    color: var(--hover-color); /* Change to your desired hover text color */
+    border-color: var(--hover-color); /* Change to your desired hover border color */
+}
 
 .booking-p {
     font-size: 40px;
@@ -36,6 +41,7 @@ form {
     padding-left: 5px;
     margin: 0;
     box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    font-size: 16px;
 } 
 
 @media screen and (max-width: 600px) {

@@ -1,35 +1,45 @@
 ---
 import NightModeButton from "./ui/NightModeButton.astro"
 import HeaderSocialLinks from "./ui/HeaderSocialLinks.astro"
-import DropDownMenu from "./ui/DropDownMenu.astro"
+import DropDownButton from "./ui/DropDownButton.astro"
 ---
 
 <header>
-    <nav class="header">
+    <nav>
+        <div class="header">
             <h1 class="Text-logo"><a href="https://braidsvilla.com/" id="logo-link">BRAIDS<br/> <span class="text-logo-small">VILLA</span></a></h1>
-
-        <div class="header-shortcuts">
-            <a href="#Policies"><p> Policies</p></a>
-            <a href="#Location"><p> Locations</p></a>
-            <a href="#Contact"><p> Contact</p></a>
+    
+            <div class="header-shortcuts">
+                <a href="#Policies"><p> Policies</p></a>
+                <a href="#Location"><p> Locations</p></a>
+                <a href="#Contact"><p> Contact</p></a>
+            </div>
+    
+            <div class="header-interactives">
+                <div id="nightModeBtn">
+                    <NightModeButton/>
+                </div>
+                <div id="other-interactives">
+                    <HeaderSocialLinks social="instagram" link="https://www.instagram.com/braids.villa/"/>
+                    <HeaderSocialLinks social="tiktok" link="https://www.tiktok.com/@ore.db"/>
+                    <a href="#Booking">
+                        <button id="headerBookBtn">BOOK APPOINTMENT</button>
+                    </a>     
+                </div>
+                <div class="dropDownMenuContainer">
+                    <DropDownButton />
+                </div>
+            </div>
         </div>
-
-        <div class="header-interactives">
-            <div id="nightModeBtn">
-                <NightModeButton/>
-            </div>
-            <div id="other-interactives">
-                <HeaderSocialLinks social="instagram" link="https://www.instagram.com/braids.villa/"/>
-                <HeaderSocialLinks social="tiktok" link="https://www.tiktok.com/@ore.db"/>
-                <a href="#Booking">
-                    <button id="headerBookBtn">BOOK APPOINTMENT</button>
-                </a>     
-            </div>
-            <div class="dropDownMenuContainer">
-                <DropDownMenu />
-            </div>
+        <div 
+            class="dropdownmenu"
+            id="dropdownmenu"
+            style="display: block; transition : height 2s ease;"
+        >
+            <p> <a href="#Location">Location & Hours</a></p>
+            <p> <a href="#Policies">Policies</a></p>
+            <p> <a href="#Contact">Contact Me</a></p>
         </div>
-        
     </nav>
 </header>
 
@@ -67,6 +77,20 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
     a {    
         text-decoration: none;
         color: inherit;
+    }
+    .dropdownmenu p:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+    .dropdownmenu {
+        text-align: center;
+        width: 100%;
+        /* border: solid 1px var(--main-text-color); */
+    }
+    .dropdownmenu p {
+        padding-bottom: 1rem;
+        border-bottom: solid 1px var(--main-text-color);
+
     }
     div p:hover {
         color : #f72a5a;
@@ -135,7 +159,7 @@ import DropDownMenu from "./ui/DropDownMenu.astro"
         .header-interactives {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        /* gap: 1rem; */
         justify-items: end;
         }
         .Text-logo {

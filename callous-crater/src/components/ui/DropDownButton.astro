@@ -1,0 +1,97 @@
+---
+
+---
+
+    <div id="toggleMenuMode">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="MenuClosed"
+            style="display: block;"
+        >
+            <path
+                fill="var(--secondary-btn-color)"
+                d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1"
+            ></path>
+        </svg>
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="MenuOpen"
+            style="display: none;"
+        >
+            <path
+                fill="var(--secondary-btn-color)"
+                stroke="var(--secondary-btn-color)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="m7 10l5 5m0 0l5-5"></path>
+        </svg>
+    </div>
+
+
+<style>
+
+    @media screen and (max-width: 600px) {
+        svg {
+        width: 2rem;
+        height: 2rem;
+    }
+	}
+	/* Tablet Layout */
+	@media screen and (min-width : 601px) {
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+	}
+</style>
+<script>
+    let isOpen = false;
+    const menubar = document.getElementById("MenuClosed");
+    const downArrow = document.getElementById("MenuOpen");
+    const toggleBtn = document.getElementById("toggleMenuMode");
+    const dropdown = document.getElementById("dropdownmenu");
+
+    // Change between menubar open and closed SVGs
+    function toggleMenu() {
+        isOpen = !isOpen;
+        if (menubar && downArrow && dropdown) {
+            if (isOpen) {
+              menubar.style.display = "none";
+              downArrow.style.display = "block";
+              dropdown.style.display = "block";
+              dropdown.style.height = "auto";
+
+            }
+            else {
+              menubar.style.display = "block";
+              downArrow.style.display = "none";
+              dropdown.style.display = "none";
+              dropdown.style.height = "0";
+
+            }
+        }
+    }
+
+    /*
+     * @param {MouseEvent} event
+     */
+    // Close the menu if clicked outside
+    function handleClickOutside(event) {
+        if (menubar && downArrow && dropdown && toggleBtn) {
+            if (isOpen && !toggleBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                isOpen = false;
+                dropdown.style.height = "0";
+                dropdown.style.display = "none";
+                menubar.style.display = "block";
+                downArrow.style.display = "none";
+            }
+        }
+    }
+
+    toggleBtn?.addEventListener("click", toggleMenu);
+    document.addEventListener("click", handleClickOutside);
+</script>

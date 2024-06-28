@@ -1,15 +1,17 @@
 import EmblaCarousel from "./EmblaCarousel";
 import './css/bookingCarousel.css'
 import './css/bookingCard.css'
-import BookingModalButton from "./BookingModalButton.jsx";
+import BookingModalButton from "./BookingModalButton";
 interface CardProps {
     tag: string;
     images: string[];
     hairStyleName: string;
     description: string;
     duration: string;
-    price: string;
-    salePrice?: string;
+    price: number;
+    salePrice?: number;
+    hairLength : {[key : string]: number},
+    hairSize : {[key : string]: number}
 }
 
 export default function BookingCard ({
@@ -19,10 +21,14 @@ export default function BookingCard ({
     description,
     duration,
     price,
-    salePrice
+    salePrice,
+    hairLength,
+    hairSize,
+
 }: CardProps) {
 
     const OPTIONS = {}
+    var bookingPrice = salePrice ? salePrice : price;
     return (
         <div className="container">
             {/* IF TAG Exists Populate it else use the default which is empty */}
@@ -56,7 +62,7 @@ export default function BookingCard ({
                             <span>{`$${price}`}</span>
                         )}
                     </h1>
-                    <BookingModalButton />
+                    <BookingModalButton price={bookingPrice} hairSizes={hairSize} hairLengths={hairLength}/>
                 </div>
 
             </div>

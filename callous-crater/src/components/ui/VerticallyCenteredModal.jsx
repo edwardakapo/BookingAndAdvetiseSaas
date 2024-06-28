@@ -7,7 +7,10 @@ const VerticallyCenteredModal = ({ show, onClose, children }) => {
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <button className="close-button" onClick={onClose}>x</button>
+                <div className='modal-title-bar'>
+                    <button className="close-button" onClick={onClose}>ⓧ</button>
+                    <h1 className="modal-title"> Complete Your Booking</h1>
+                </div>
                 {children}
             </div>
         </div>

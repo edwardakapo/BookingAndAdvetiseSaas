@@ -28,8 +28,8 @@
         <h1 class="mobileHero">
             <div class="mobile-gradient">
                 Elevate    
-            </div>
-            Your Style <br/> With Our <br>             
+            
+            Your Style </div><br/> With Our <br>             
             <div class="underline-illustration-wrapper">
                 Affordable
                 <img src="/underline.svg" class="underline-illustration">
@@ -127,19 +127,19 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-animation 3s ease infinite;
-}
+    }
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%; /* Start position */
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%; /* Start position */
+        }
+        50% {
+            background-position: 100% 50%; /* Midway position */
+        }
+        100% {
+            background-position: 0% 50%; /* End position */
+        }
     }
-    50% {
-        background-position: 100% 50%; /* Midway position */
-    }
-    100% {
-        background-position: 0% 50%; /* End position */
-    }
-}
     h2 {
        font-size: var(--text-size);
        letter-spacing: calc(var(--text-size) * 0.05);
@@ -166,7 +166,7 @@
         justify-content: center;
         align-items: center;
         row-gap: 1.5rem;
-        padding-bottom: 2.5rem;
+        /* padding-bottom: 1rem; */
         }
         .blur-background {
         position: absolute;
@@ -180,8 +180,7 @@
         filter: blur(100px); /* Adjust the blur radius as needed */
         z-index: -1; /* Ensure the blur background is behind the text */
         border-radius: 100%;
-
-    }
+        }
         .largeHero {
             display: none;
         }
@@ -202,7 +201,7 @@
         width: clamp(210px, 50vw , 260px);
         height: clamp(40px, 12vw, 50px);
         font-family: "Chivo", sans-serif;
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 500;
         line-height: 30px;
         background-color: #FF7698;
@@ -217,6 +216,9 @@
         }
         .biggerBtn {
             display: none;
+        }
+        .stars-illustration {
+        bottom: 40%;
         }
 		
 	}

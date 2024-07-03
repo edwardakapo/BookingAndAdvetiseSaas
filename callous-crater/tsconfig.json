@@ -4,7 +4,4 @@
     "jsxImportSource": "react",
     "lib": ["dom", "es2017"]
   },
-  "exclude": [
-    "src/components/GoogleAnalytics.astro"
-  ]
 }

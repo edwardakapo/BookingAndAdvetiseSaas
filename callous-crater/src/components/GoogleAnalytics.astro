@@ -1,36 +1,9 @@
-// @ts-nocheck
-
-<script  lang="ts">
-  import { configure } from '@builder.io/partytown';
-
-  // Configure Partytown
-  configure({
-    baseUrl: '/',  // Adjust as per your project setup
-    disableEval: true,  // Optional: Disable eval if not needed
-    timeout: 5000  // Optional: Set a timeout for scripts
-  });
-</script>
-
-<head>
-  <!-- Load Partytown -->
-  <script>
-    (function(w,d,s,u){
-      w[__pt]=w[__pt]||[];
-      function pt(){w[__pt].push(arguments);}
-      w.__pt=pt;
-      pt.l=1*new Date();
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=u!='dataLayer'?'&l='+u:'';
-      j.async=true;
-      j.src='https://cdn.jsdelivr.net/npm/@builder.io/partytown@latest/dist/partytown.min.js';
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer');
-  </script>
+---
+// const GOOGLE_ANALYTICS_TAG_ID = import.meta.env.VITE_GOOGLE_ANALTICS_TAG_ID
+---
 
 
-
-<!-- Google tag (gtag.js)
+<!-- Google tag (gtag.js) -->
 <script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-9V32C365YP"></script>
 <script is:inline type="text/partytown">
   window.dataLayer = window.dataLayer || [];
@@ -38,4 +11,4 @@
   gtag('js', new Date());
 
   gtag('config', 'G-9V32C365YP');
-</script> -->
+</script>

@@ -1,8 +1,2 @@
 [build]
   functions = "netlify/functions"
-
-[[redirects]]
-  from = "/proxy-gtm"
-  to = "/.netlify/functions/proxyGTM"
-  status = 200
-  force = true

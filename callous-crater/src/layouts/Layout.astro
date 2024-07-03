@@ -25,6 +25,8 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 		<title>{title}</title>
 	</head>
 	<body>
+		  <!-- Proxy GTM script -->
+		  <script is:inline type="text/partytown" src="/.netlify/functions/proxyGTM"></script>
 		<slot />
 		<!-- <script type="module"  src="/cookieconsent-config.js"></script> -->
 

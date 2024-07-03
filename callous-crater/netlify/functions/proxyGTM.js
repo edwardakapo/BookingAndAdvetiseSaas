@@ -1,23 +1,28 @@
-const fetch = require('node-fetch');
+// netlify/functions/proxyGTM.js
 
-exports.handler = async function (event, context) {
-  const url = new URL(event.queryStringParameters.url);
+const axios = require('axios');
+
+exports.handler = async (event) => {
+  const { id, src, cond, gtm } = event.queryStringParameters;
+  const GTM_ENDPOINT = `https://www.googletagmanager.com/debug/bootstrap?id=${id}&src=${src}&cond=${cond}&gtm=${gtm}`;
 
   try {
-    const response = await fetch(url);
-    const data = await response.text();
+    const response = await axios.get(GTM_ENDPOINT);
+    const responseData = response.data;
+
     return {
       statusCode: 200,
       headers: {
-        'Content-Type': 'application/javascript',
         'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
       },
-      body: data,
+      body: JSON.stringify(responseData),
     };
   } catch (error) {
+    console.error('Error proxying GTM request:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to fetch resource' }),
+      body: JSON.stringify({ error: 'Failed to proxy GTM request' }),
     };
   }
 };

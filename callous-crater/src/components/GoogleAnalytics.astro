@@ -1,11 +1,15 @@
----
-// const GOOGLE_ANALYTICS_TAG_ID = import.meta.env.VITE_GOOGLE_ANALTICS_TAG_ID
+// @ts-nocheck
 
----
+  <!-- Load PartyTown -->
+  <script>
+    (function(w,d,s,u){w[__pt]=w[__pt]||[];function pt(){w[__pt].push(arguments);}w.__pt=pt;pt.l=1*new Date();var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=u!='dataLayer'?'&l='+u:'';j.async=true;j.src='https://cdn.jsdelivr.net/npm/@builder.io/partytown@latest/dist/partytown.min.js';f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer');
+  </script>
+
 
 <!-- Google tag (gtag.js) -->
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-9V32C365YP"></script>
-<script type="text/partytown">
+<script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-9V32C365YP"></script>
+<script is:inline type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

@@ -10,5 +10,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-9V32C365YP');
+  gtag('config', 'G-9V32C365YP', {
+    'transport_type': 'beacon',
+    'use_nocors': true
+  });
 </script>

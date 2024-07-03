@@ -3,7 +3,7 @@
 ---
 
 <section id="Policies">
-    <!-- <div class="policy-blur"></div> -->
+    <div class="policy-blur"></div>
     <div class="policy-content">
         <h1> Policies</h1>
         <ul>
@@ -55,14 +55,14 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -80%);
-        width: 100%;
+        width: 80%;
         height: 50%;
         background: var(--background-blur-color);
-        /* background: #000000; */
-        box-shadow: 0 0 30px var(--background-blur-color); /* Add a subtle shadow for a smoother effect */
-        filter: blur(90px); /* Adjust the blur radius as needed */
+        filter: blur(50px); /* Adjust the blur radius as needed */
         z-index: -1; /* Ensure the blur background is behind the text */
         border-radius: 100%;
+        will-change: filter; /* Hint to the browser */
+
     }
     ul {
         display: grid;

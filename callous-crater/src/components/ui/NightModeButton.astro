@@ -41,6 +41,8 @@
         // toggle theme
         function toggleMode() {
             document.documentElement.classList.toggle('dark')
+            document.documentElement.classList.toggle('cc--darkmode');
+
             //localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
                     //matching the svg to the mode
             if(daySvg && nightSvg){

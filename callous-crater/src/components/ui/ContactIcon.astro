@@ -107,7 +107,17 @@ const getHref = (icon, string) => {
         font-size: 10px;
     }
     }
-    @media screen and (min-width : 601px) {
+    @media screen and (min-width : 601px) and (max-width : 1023px){
+        svg  {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        p {
+        font-size: 11px;
+    }
+    }
+
+    @media screen and (min-width : 1024px) {
         svg  {
             width: 2rem;
             height: 2rem;

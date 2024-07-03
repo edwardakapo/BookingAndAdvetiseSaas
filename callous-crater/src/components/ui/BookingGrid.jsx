@@ -3,6 +3,7 @@ import BookingCard from './BookingCard'; // Adjust the import path as necessary
 import './css/bookingGrid.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './css/toastifyOverride.css'
 
 export default function BookingGrid({ items }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -56,16 +57,21 @@ export default function BookingGrid({ items }) {
     setFilteredItems(sorted);
   }, [sortType, items]);
 
-  // const gridStyle = {
-  //   gridTemplateColumns: filteredItems.length <= 1 ? '1fr' :
-  //                        filteredItems.length === 2 ? '1fr 1fr' : '1fr 1fr 1fr',
-  //   width: filteredItems.length <= 1 ? '33%' :
-  //          filteredItems.length === 2 ? '66%' : '100%',
-  // };
 
   return (
     <div className='booking-grid-container'>
-      <ToastContainer />
+        <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={true}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        // theme="dark"
+        transition: Bounce
+        />
       <div className='searchBar'>
           <div className='searchBar-icon'>
             <svg xmlns="http://www.w3.org/2000/svg" id='search-icon' x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">

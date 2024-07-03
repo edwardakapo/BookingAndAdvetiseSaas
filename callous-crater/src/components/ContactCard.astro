@@ -21,7 +21,7 @@ import ContactIcon from "./ui/ContactIcon.astro"
 
 <style> 
 
-    @media screen and (max-width : 600px){
+    @media screen and (max-width : 644px){
         div {
         display: flex;
         flex-direction: column;
@@ -67,8 +67,66 @@ import ContactIcon from "./ui/ContactIcon.astro"
         }
     }
 
-    @media screen and (min-width : 601px) {
+    @media screen and (min-width : 645px) and (max-width : 1023px) {
 
+        img {
+            position: absolute;
+            top: -40px; /* Adjust this value to control how much the image peeks over */
+            right: 0;
+            z-index: 1;
+        }
+        .contact-image {
+            height: 360px;
+        }
+        section {
+            position: relative;
+            display: flex;
+            width: 90%;
+            margin: auto;
+            max-width: 600px;
+            min-width: 600px;
+            height: 317px;
+            align-items: flex-end;
+            background-color: var(--card-highlight-color);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: clamp(20px,3.5vw,25px);
+            font-weight: 900;
+            margin: auto;
+
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 0;
+            margin-top: 0.5rem;
+            
+        }
+        p {
+            font-size: 14px;
+            font-weight: 300;
+            width: 85%;
+            margin-bottom: 0;
+            margin-top: 0.5rem;
+        }
+        .content {
+            width: 55%;
+            padding: 1rem 0rem 1rem 2rem;
+        }
+        .icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 80%;
+            justify-items: stretch;
+            padding-top: 0.5rem;
+        }
+        #mobileLineBreak {
+            display: none;
+        }
+        
+    }
+    @media screen and (min-width : 1024px) {
         img {
             position: absolute;
             top: -50px; /* Adjust this value to control how much the image peeks over */
@@ -120,6 +178,6 @@ import ContactIcon from "./ui/ContactIcon.astro"
         #mobileLineBreak {
             display: none;
         }
-        
-    }
+
+        }
 </style>

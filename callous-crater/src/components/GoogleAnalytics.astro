@@ -1,0 +1,14 @@
+---
+const GOOGLE_ANALYTICS_TAG_ID = import.meta.env.VITE_GOOGLE_ANALTICS_TAG_ID
+
+---
+
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_TAG_ID}`}></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${GOOGLE_ANALYTICS_TAG_ID}');
+</script>

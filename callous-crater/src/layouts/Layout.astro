@@ -5,7 +5,9 @@ interface Props {
 
 const { title } = Astro.props;
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
-import cookieIcon from '../../public/cookie-icon.svg' 
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+
+// const cookieConsentSrc = import.meta.env.VITE_COOKIE_CONSENT_SRC;
 ---
 
 <!doctype html>
@@ -19,16 +21,33 @@ import cookieIcon from '../../public/cookie-icon.svg'
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chivo:wght@100..900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
-		<script type="module" src="./src/components/cookieconsent-config.js"></script>
-		<button type="button" data-cc="show-consentModal" class="cookie-consent-button">
+		<!-- <script type="module"  src="/cookieconsent-config.js"></script> -->
+
+		<!-- <button type="button" data-cc="show-consentModal" class="cookie-consent-button">
 			<svg fill="#f72a51" width="64px" height="64px" viewBox="0 0 256.00 256.00" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#FF6F91" transform="matrix(1, 0, 0, 1, 0, 0)" stroke-width="0.00256"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.512"></g><g id="SVGRepo_iconCarrier"> <path d="M228.43066,111.76758a19.89757,19.89757,0,0,0-16.82714-3.85645,19.99513,19.99513,0,0,1-24.40186-19.28125,19.92083,19.92083,0,0,0-19.82959-19.83105,19.99406,19.99406,0,0,1-19.28223-24.40235,20.01326,20.01326,0,0,0-19.44091-24.39062c-.22559-.001-.44678-.00195-.67188-.00195a107.99982,107.99982,0,1,0,108.01758,107.334v-.001A19.95917,19.95917,0,0,0,228.43066,111.76758Zm-41.0874,75.68262c-32.29883,32.24121-85.18115,32.59375-117.88525.79A83.99965,83.99965,0,0,1,123.84668,44.10352a44.00257,44.00257,0,0,0,39.55078,48.499A44.00432,44.00432,0,0,0,211.897,132.15332,83.31727,83.31727,0,0,1,187.34326,187.4502Zm-20.02954-26.76368a15.99985,15.99985,0,1,1-22.62744,0A15.99941,15.99941,0,0,1,167.31372,160.68652Zm-64-8a15.99985,15.99985,0,1,1-22.62744,0A15.99941,15.99941,0,0,1,103.31372,152.68652Zm-30.62744-33.373a15.99985,15.99985,0,1,1,22.62744,0A15.99963,15.99963,0,0,1,72.68628,119.31348Zm74.62744,16a15.99985,15.99985,0,1,1,0-22.627A15.99977,15.99977,0,0,1,147.31372,135.31348Z"></path> </g></svg>
 		</button>
+		<script>
+			import { reset, run } from 'vanilla-cookieconsent';
+			import { config } from '../components/CookieConsentConfig';
+		  
+			  const resetBtn = document.getElementById("reset-btn");
+			  const toggleThemeBtb = document.getElementById("toggle-theme-btn");
+		  
+			  resetBtn?.addEventListener('click', () => {
+				  reset(true);
+				  run(config);
+			  });
+		  
+			  toggleThemeBtb?.addEventListener('click', () => {
+				  document.body.classList.toggle('cc--elegant-black');
+			  });
+		  </script> -->
 	</body>
 </html>
 
@@ -71,7 +90,7 @@ import cookieIcon from '../../public/cookie-icon.svg'
 		--card-highlight-color : #1E1E1E;
 		--modal-background-color : #2f2f2f;
 		--hover-color : #FAF3E0;
-		--background-blur-color : #ffffff13;
+		--background-blur-color : #89888812;
 		--cookie-background-color: #1E1E1E;
 		--cookie-hover-color : #383838;
 

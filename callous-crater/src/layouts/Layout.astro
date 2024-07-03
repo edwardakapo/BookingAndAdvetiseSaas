@@ -102,6 +102,15 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 		--toastify-color-light: #717171;
  	 	--toastify-text-color-light:#FAF3E0;
 	}
+
+	@media screen and (max-width : 600px) {
+		:root{
+			--background-blur-color : #fde3e3;
+		}
+		:root.dark{
+			--background-blur-color : #8988885a;
+		}
+	}
 	
 	h1, ul, hr {
 		color: var(--main-text-color);

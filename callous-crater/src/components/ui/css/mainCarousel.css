@@ -1,10 +1,10 @@
 .embla-Carousel {
       max-width: 100vw;
       margin: auto;
-      --slide1-height: 19rem;
+      --slide1-height: 520px;
       --slide1-spacing: 1rem;
       --slide1-size: 100%;
-      --slide1-width :380px;
+      --slide1-width :480px;
   }
   .embla-Carousel__viewport {
     overflow: clip;
@@ -23,6 +23,8 @@
     min-width: 0;
     padding-left: var(--slide1-spacing);
     transform-origin: top center; /* Scale from the top center */
+    height: var(--slide1-height);
+    width: var(--slide1-width);
 
   }
 
@@ -38,13 +40,15 @@
     .embla-Carousel {
         --slide1-width: 300px; /* Adjust width for smaller screens */
         --slide1-spacing: 0.5rem; /* Adjust spacing for smaller screens */
+        --slide1-height: 340px;
     }
 }
 
 @media (max-width: 480px) {
     .embla-Carousel {
-        --slide1-width: 80%; /* Full width for very small screens */
-        --slide1-spacing: 0.25rem; /* Adjust spacing for very small screens */
+      --slide1-width: 250px; /* Adjust width for smaller screens */
+      --slide1-spacing: 0.5rem; /* Adjust spacing for smaller screens */
+      --slide1-height: 290px;
     }
     .embla-Carousel__viewport {
       overflow: clip;

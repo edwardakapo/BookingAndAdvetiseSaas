@@ -1,33 +1,58 @@
 ---
 import BookingGrid from "./ui/BookingGrid"
-const ImgArr = [
-    "https://img.freepik.com/free-vector/hot-dog-street-snack-isolated-transparent_107791-18353.jpg?t=st=1718898461~exp=1718902061~hmac=c9d39a5399875c4eb3b1011a80922f3e71d2bfac3e6899a6e209e257d65c12b8&w=996",
-    "https://img.freepik.com/free-photo/photo-delicious-hamburger-isolated-white-background_125540-3378.jpg?w=1060&t=st=1718898841~exp=1718899441~hmac=9ceb4d02f008ba45e253acf66bc1d73f59b32cc44dd2ed5ae2796cce5fe6fb61",
-    "https://img.freepik.com/free-psd/arm-chair-isolated-transparent-background_191095-12827.jpg?t=st=1718898866~exp=1718902466~hmac=1c1add9a5735fca4a705a41bc36b1cae85e57e24f77a5a379a6ded98ffa47102&w=740",
-    "https://img.freepik.com/free-psd/sun-hat-png-isolated-transparent-background_191095-9871.jpg?size=626&ext=jpg&ga=GA1.1.230745313.1718898785&semt=sph",
-    "https://img.freepik.com/free-psd/poinsettia-flower-png-isolated-transparent-background_191095-12083.jpg?t=st=1718898887~exp=1718902487~hmac=711b1d2920f79aecd7104d5bc8fba0252e777661a05cd41f44cb95c1254b51bc&w=740",
-];
+
 
 const BohoBraidsArr =[
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/BohoLarge.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/BohoMedium.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/BohoSmall.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoLarge-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoMedium-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoSmall-min.jpg",
 ];
 
 const FrenchCurlsArr =[
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/FrenchCurlsLg.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/FrenchCurlsMd.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/FrenchCurlsSm.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/FrenchCurlsXs.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsXs-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsSm-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsMd-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsLg-min.jpg",
 ];
+
 const KnotlessArr =[
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/KnotlessLarge.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/KnotlessMedium.jpg",
-"https://edwardakaposfirstawsbucket.s3.amazonaws.com/CarouselImages/KnotlessXs.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/KnotlessXs-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/KnotlessMedium-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/KnotlessLarge-min.jpg",
+];
+
+const LocsArr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/locs_1-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/locs_2-min.jpg",
+];
+
+const Locs2Arr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/locs_2-min.jpg",
+];
+
+const CornrowsArr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/Cornrows_1-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/Cornrows_2-min.jpg",
+];
+
+const SenegaleseArr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/SenegaleseTwists_2-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/SenegaleseTwists_1-min.jpg"
+];
+
+const PassionTwistArr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/passionTwists_1-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/passionTwists_2-min.jpg"
+];
+
+const FulaniArr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/fulani_braids_3-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/fulani_braids_2-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/fulani_braids_1-min.jpg",
 ];
 
 const initialData = [
-    {
+    /* data format
         tag : "Hot",
         images : BohoBraidsArr,
         hairStyleName : "Boho Braids",
@@ -37,22 +62,92 @@ const initialData = [
         salePrice : "20",
         onSale : true,
         hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}   
+    */
+    {
+        // tag : "Hot",
+        images : BohoBraidsArr,
+        hairStyleName : "Boho Braids",
+        description : "Simple braids to use for 1-2 months",
+        duration : "4-8hrs",
+        price : "120",
+        hairLength : { '50' : 0, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Large' : 0, 'Medium': 60, 'Small': 80, 'Extra Small' : 120}
     },
     {
-        tag : "Ore's Choice",
+        // tag : "Ore's Choice",
         images : FrenchCurlsArr,
         hairStyleName : "French Curls",
         description : "for an angel",
-        duration : "2hrs",
-        price : "80",
+        duration : "4-8hrs",
+        price : "120",
         hairLength : { '50' : 20, '52': 30, '54': 40, '60' : 50, '70':60},
-        hairSize : { 'Extra Small' : 20, 'Small': 30, 'Medium': 40, 'Large' : 50}
+        hairSize : { 'Large' : 0, 'Medium': 40, 'Small': 80, 'Extra Small' : 120}
     },
     {
-        tag : "On Sale",
+        // tag : "On Sale",
         images : KnotlessArr,
         hairStyleName : "Knotless",
+        description : "classic and timeless",
+        duration : "4-8hrs",
+        price : "100",
+        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'Small': 80, 'Extra Small' : 120}
+    },
+    {
+        // tag : "On Sale",
+        images : CornrowsArr,
+        hairStyleName : "Cornrows",
+        description : "classic and timeless",
+        duration : "1-3hrs",
+        price : "50",
+        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'Small': 80, 'Extra Small' : 120}
+    },
+    {
+        // tag : "On Sale",
+        images : SenegaleseArr,
+        hairStyleName : "Senegalese Twists",
+        description : "classic and timeless",
+        duration : "3-6hrs",
+        price : "50",
+        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+    },
+    {
+        // tag : "On Sale",
+        images : PassionTwistArr,
+        hairStyleName : "Passion Twists",
+        description : "classic and timeless",
+        duration : "3-6hrs",
+        price : "50",
+        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+    },
+    {
+        // tag : "On Sale",
+        images : FulaniArr,
+        hairStyleName : "Fulani Braids",
+        description : "classic and timeless",
+        duration : "3-6hrs",
+        price : "50",
+        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+    },
+    {
+        // tag : "On Sale",
+        images : LocsArr,
+        hairStyleName : "Soft/Butterfly Locs",
+        description : "classic and timeless",
+        duration : "3hrs",
+        price : "50",
+        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
+        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+    },
+    {
+        // tag : "On Sale",
+        images : Locs2Arr,
+        hairStyleName : "Locs Retwist",
         description : "classic and timeless",
         duration : "3hrs",
         price : "50",

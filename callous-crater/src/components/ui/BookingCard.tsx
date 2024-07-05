@@ -27,6 +27,7 @@ export default function BookingCard ({
 
 }: CardProps) {
 
+
     const OPTIONS = {}
     var bookingPrice = salePrice ? salePrice : price;
     return (
@@ -39,6 +40,7 @@ export default function BookingCard ({
             <div className="imageCarousel">
                 <EmblaCarousel images={images} options={OPTIONS} />
             </div>
+
             <div className="card-elements">
 
                 <h1 className="hairStyle">{hairStyleName}</h1>
@@ -62,7 +64,7 @@ export default function BookingCard ({
                             <span className="price-container"><p className="starting-at">starts at</p>{`$${price}`}</span>
                         )}
                     </h1>
-                    <BookingModalButton price={bookingPrice} hairSizes={hairSize} hairLengths={hairLength}/>
+                    <BookingModalButton price={bookingPrice} hairSizes={hairSize} hairLengths={hairLength} hairStyleName={hairStyleName}/>
                 </div>
 
             </div>

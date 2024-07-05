@@ -76,10 +76,6 @@ export default function BookingModalButton({
         const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;    
 
-        console.log('serviceId', serviceId)
-        console.log('templateId', templateId)
-        console.log('publicKey', publicKey)
-
         const templateParams: TemplateParams = {
             name : nameRef.current.value,
             phone : phoneRef.current.value,
@@ -101,30 +97,8 @@ export default function BookingModalButton({
         if (extraInfoShow) {
             templateParams.extraInfo = extraInfoRef.current.value;
         }
-        console.log("Name:", nameRef.current.value);
-        console.log("Phone:", phoneRef.current.value);
-        console.log("Email:", emailRef.current.value);
-        console.log("Date & Time for booking:", dateTimeRef.current.value);
-        console.log("Hair Length Extra:", hairLengthValue);
-        console.log("Hair Size Extra:", hairSizeValue);
-        console.log("Selected Hair Size:", selectedHairSize);
-        console.log("Selected Hair Length:", selectedHairLength);
-            // Add console logs for checkbox states
-        console.log("Extensions provision selected:", exstensionValue > 0);
-        console.log("Home service selected:", homeServiceValue > 0);
-        console.log("Extra info provided:", extraInfoShow);
-        console.log("Address provided:", addressShow);
 
-        if (addressShow) {
-            console.log("Address:", addressRef.current.value);
-            console.log("City:", cityRef.current.value);
-        }
-        if (extraInfoShow) {
-            console.log("Extra Info:", extraInfoRef.current.value);
-        }
-        console.log("Final Price:", bookingPrice);
-
-        emailjs.send(serviceId, templateId, templateParams, publicKey)
+        emailjs.send(serviceId, templateId, templateParams as unknown as Record<string, unknown>, publicKey)
         .then((response) => {
             console.log("Email sent successfully", response);
             setModalShow(false)

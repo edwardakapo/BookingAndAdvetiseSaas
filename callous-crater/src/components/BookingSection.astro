@@ -3,15 +3,15 @@ import BookingGrid from "./ui/BookingGrid"
 
 
 const BohoBraidsArr =[
-    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoLarge-min.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoMedium-min.jpg",
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoLarge-min.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/BohoSmall-min.jpg",
 ];
 
 const FrenchCurlsArr =[
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsMd-min.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsXs-min.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsSm-min.jpg",
-    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsMd-min.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/FrenchCurlsLg-min.jpg",
 ];
 
@@ -36,8 +36,8 @@ const CornrowsArr = [
 ];
 
 const SenegaleseArr = [
+    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/SenegaleseTwists_1-min.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/SenegaleseTwists_2-min.jpg",
-    "https://edwardakaposfirstawsbucket.s3.amazonaws.com/ServiceOfferingImages/SenegaleseTwists_1-min.jpg"
 ];
 
 const PassionTwistArr = [
@@ -65,94 +65,97 @@ const initialData = [
         hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}   
     */
     {
-        // tag : "Hot",
+        tag : "Ore's Choice",
         images : BohoBraidsArr,
         hairStyleName : "Boho Braids",
-        description : "Simple braids to use for 1-2 months",
+        description : "The girlies have chosen this as the style for the season.",
         duration : "4-8hrs",
-        price : "120",
-        hairLength : { '50' : 0, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Large' : 0, 'Medium': 60, 'Small': 80, 'Extra Small' : 120}
+        price : "70",
+        hairLength : { 'Shoulder | 28' : 0, 'MidBack | 42': 20, 'LowerBack | 52': 40, 'Bum | 72': 80},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'SMedium': 60, 'Small': 80, 'Extra Small' : 120}
     },
+
     {
-        // tag : "Ore's Choice",
-        images : FrenchCurlsArr,
-        hairStyleName : "French Curls",
-        description : "for an angel",
-        duration : "4-8hrs",
-        price : "120",
-        hairLength : { '50' : 20, '52': 30, '54': 40, '60' : 50, '70':60},
-        hairSize : { 'Large' : 0, 'Medium': 40, 'Small': 80, 'Extra Small' : 120}
-    },
-    {
-        // tag : "On Sale",
+        tag : "Classic",
         images : KnotlessArr,
-        hairStyleName : "Knotless",
-        description : "classic and timeless",
+        hairStyleName : "Knotless Braids",
+        description : "Perfect combo of style and convenience.",
         duration : "4-8hrs",
-        price : "100",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Large' : 0, 'Medium': 40, 'Small': 80, 'Extra Small' : 120}
-    },
-    {
-        // tag : "On Sale",
-        images : CornrowsArr,
-        hairStyleName : "Cornrows",
-        description : "classic and timeless",
-        duration : "1-3hrs",
-        price : "50",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Large' : 0, 'Medium': 40, 'Small': 80, 'Extra Small' : 120}
+        price : "60",
+        hairLength : { 'Shoulder | 28' : 0, 'MidBack | 42': 20, 'LowerBack | 52': 40, 'Bum | 72': 80},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'SMedium': 60, 'Small': 80, 'Extra Small' : 120}
     },
     {
         // tag : "On Sale",
         images : SenegaleseArr,
         hairStyleName : "Senegalese Twists",
-        description : "classic and timeless",
+        description : "When life gives you lemons give it a 'Twist'.",
         duration : "3-6hrs",
-        price : "50",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+        price : "60",
+        hairLength : { 'Shoulder | 28' : 0, 'MidBack | 42': 20, 'LowerBack | 52': 40, 'Bum | 72': 80},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'SMedium': 60, 'Small': 80, 'Extra Small' : 120}
+    },
+
+    {
+        images : FrenchCurlsArr,
+        hairStyleName : "French Curls",
+        description : "Curly hair, Fierce attitude.",
+        duration : "5-10hrs",
+        price : "80",
+        hairLength : { 'Shoulder | 12' : 0, 'MidBack | 16': 20, 'LowerBack | 22': 40, },
+        hairSize : { 'Large' : 0, 'Medium': 40, 'SMedium': 60, 'Small': 80, 'Extra Small' : 120}
+    },
+
+    {
+        // tag : "On Sale",
+        images : LocsArr,
+        hairStyleName : "Soft/Butterfly Locs",
+        description : "Life is too short to have ordinary hair.",
+        duration : "3-6hrs",
+        price : "100",
+        hairLength : { 'Length of the Extension | set' : 0,},
+        hairSize : { 'Large': 0, 'Medium': 40, 'Small' : 80}
     },
     {
         // tag : "On Sale",
         images : PassionTwistArr,
-        hairStyleName : "Passion Twists",
-        description : "classic and timeless",
+        hairStyleName : "Passion/Kinky Twists",
+        description : "Slay in style... Yes YOU!",
         duration : "3-6hrs",
-        price : "50",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+        price : "60",
+        hairLength : { 'Shoulder | 28' : 0, 'MidBack | 42': 20, 'LowerBack | 52': 40, 'Bum | 72': 80},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'SMedium': 60, 'Small': 80, 'Extra Small' : 120}
     },
     {
         // tag : "On Sale",
         images : FulaniArr,
         hairStyleName : "Fulani Braids",
-        description : "classic and timeless",
+        description : "Its your style, its your rules!",
         duration : "3-6hrs",
-        price : "50",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+        price : "60",
+        hairLength : { 'Shoulder | 28' : 0, 'MidBack | 42': 20, 'LowerBack | 52': 40, 'Bum | 72': 80},
+        hairSize : { 'Large' : 0, 'Medium': 40, 'SMedium': 60, 'Small': 80, 'Extra Small' : 120}
     },
+
     {
         // tag : "On Sale",
-        images : LocsArr,
-        hairStyleName : "Soft/Butterfly Locs",
-        description : "classic and timeless",
-        duration : "3hrs",
-        price : "50",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+        images : CornrowsArr,
+        hairStyleName : "Cornrows",
+        description : "Love is in the 'Hair'.",
+        duration : "1-4hrs",
+        price : "30",
+        hairLength : { 'Natural' : 0, 'With Extension': 50,},
+        hairSize : { 'Large' : 0, 'Medium': 20, 'Small': 40,}
     },
     {
         // tag : "On Sale",
         images : Locs2Arr,
         hairStyleName : "Locs Retwist",
-        description : "classic and timeless",
+        description : "Get your maintenance here",
         duration : "3hrs",
-        price : "50",
-        hairLength : { '50' : 10, '52': 20, '54': 30, '60' : 40, '70': 50},
-        hairSize : { 'Extra Small' : 10, 'Small': 20, 'Medium': 30, 'Large' : 40}
+        price : "80",
+        hairLength : { 'One Size' : 0,},
+        hairSize : { 'Large (30-50 locs)' : 0, 'Medium (50-80 locs)': 20, 'Small (80+ locs)': 40,}
     },
 
 ]

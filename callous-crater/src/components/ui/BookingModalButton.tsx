@@ -31,7 +31,6 @@ export default function BookingModalButton({
 
 
 
-
     const nameRef = useRef(null);
     const phoneRef = useRef(null);
     const emailRef = useRef(null);
@@ -46,19 +45,22 @@ export default function BookingModalButton({
 
     function submitHandler(e) {
         e.preventDefault();
-        if (hairLengthValue === 0 || hairSizeValue === 0) {
+        if (selectedHairSize === "" || selectedHairSize === "Select hair size" || selectedHairLength === "" || selectedHairLength === "Select hair length") {
             toast.error("Please select valid hair length and size.");
             return;
         }
-        console.log("Button clicked");
         console.log("Name:", nameRef.current.value);
         console.log("Phone:", phoneRef.current.value);
         console.log("Email:", emailRef.current.value);
-        console.log("Date & Time:", dateTimeRef.current.value);
-        console.log("Hair Length:", hairLengthValue);
-        console.log("Hair Size:", hairSizeValue);
+        console.log("Date & Time of booking:", dateTimeRef.current.value);
+        console.log("Hair Length Extra:", hairLengthValue);
+        console.log("Hair Size Extra:", hairSizeValue);
         console.log("Selected Hair Size:", selectedHairSize);
         console.log("Selected Hair Length:", selectedHairLength);
+            // Add console logs for checkbox states
+        console.log("Extensions provision selected:", exstensionValue > 0);
+        console.log("Home service selected:", homeServiceValue > 0);
+        console.log("Extra info provided:", extraInfoShow);
 
         if (addressShow) {
             console.log("Address:", addressRef.current.value);
@@ -78,9 +80,11 @@ export default function BookingModalButton({
     }
 
     function selectHandler(e, type) {
-        const value = Number(e.target.value);
+        var value = Number(e.target.value);
         const text = e.target.options[e.target.selectedIndex].text;
-
+        if (value == -1){
+            value = 0 ;
+        }
         if(type === 'hairLength'){
             setHairLengthValue(value);
             setSelectedHairLength(text);
@@ -182,7 +186,7 @@ export default function BookingModalButton({
                         <div className="form-group">
                             <label htmlFor="hair-length">Hair Length</label>
                             <select required onChange={e => selectHandler(e, 'hairLength')}>
-                                <option value={0}>Select hair length</option>
+                                <option value={-1}>Select hair length</option>
                                 {Object.entries(hairLengths).map(([length, value],index) => (
                                     <option key={index} value={value}> {length}{'"'}</option>
                                 )
@@ -192,7 +196,7 @@ export default function BookingModalButton({
                         <div className="form-group">
                             <label htmlFor="hair-size">Hair Size</label>
                             <select required onChange={e => selectHandler(e, 'hairSize')}>
-                                <option value={0}>Select hair size</option>
+                                <option value={-1}>Select hair size</option>
                                 {Object.entries(hairSizes).map(([Sizes, value],index) => (
                                     <option key={index} value={value}> {Sizes}</option>
                                 )

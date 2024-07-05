@@ -65,7 +65,19 @@
     padding-right: 1rem;
     font-size: 18px;
 }
-
+span {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+.starting-at{
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 4px;
+    /* color: #808080; */
+}
 
 /* @media screen and (max-width : 400px) {
     

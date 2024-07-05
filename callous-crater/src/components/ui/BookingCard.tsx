@@ -59,7 +59,7 @@ export default function BookingCard ({
                                 <span className="sale-price">{`$${salePrice}`}</span>
                             </>
                         ) : (
-                            <span>{`$${price}`}</span>
+                            <span ><p className="starting-at">starts at</p>{`$${price}`}</span>
                         )}
                     </h1>
                     <BookingModalButton price={bookingPrice} hairSizes={hairSize} hairLengths={hairLength}/>

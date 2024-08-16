@@ -108,6 +108,15 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 			--background-blur-color : #8988885a;
 		}
 	}
+
+	.section {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.6s ease-in; /* Transition effect */
+	}
+
+	.section.visible {
+		opacity: 1; /* Fully visible */
+	}
 	
 	h1, ul, hr {
 		color: var(--main-text-color);
@@ -181,3 +190,27 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
         background-color: var(--cookie-hover-color);
     }
 </style>
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('.section');
+
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.07 // Trigger when 10% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Add visible class
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section); // Observe each section
+    });
+});
+</script>

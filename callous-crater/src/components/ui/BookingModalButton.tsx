@@ -192,6 +192,15 @@ export default function BookingModalButton({
         }
     }, [modalShow]);
 
+    const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const selectedDate = new Date(event.target.value);
+        const month = selectedDate.getMonth(); // 0 = January, 1 = February, ..., 8 = September, 9 = October
+        if (month === 7 || month === 8) { // August or September
+            toast.error("Please select a date outside of August and September.");
+            event.target.value = ""; // Clear the input
+        }
+    }
+
 
 
 
@@ -219,7 +228,7 @@ export default function BookingModalButton({
                         </div>
                         <div className="form-group">
                             <label htmlFor="date-time">Date & Time</label>
-                            <input type="datetime-local" id="date-time" name="date-time" min="2024-10-01T00:00" required ref={dateTimeRef} />
+                            <input type="datetime-local" id="date-time" name="date-time"  onChange={handleDateChange} required ref={dateTimeRef} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="hair-length">Hair Length</label>

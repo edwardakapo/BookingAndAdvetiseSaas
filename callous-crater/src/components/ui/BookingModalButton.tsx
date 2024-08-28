@@ -219,7 +219,7 @@ export default function BookingModalButton({
                         </div>
                         <div className="form-group">
                             <label htmlFor="date-time">Date & Time</label>
-                            <input type="datetime-local" id="date-time" name="date-time" required ref={dateTimeRef} />
+                            <input type="datetime-local" id="date-time" name="date-time" min="2024-10-01T00:00" required ref={dateTimeRef} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="hair-length">Hair Length</label>
